@@ -13,7 +13,8 @@ export class SummitService{
   constructor(private http: HttpClient) {  }
 
   public getSummits(): Observable<Summit[]>{
-    return this.http.get<Summit[]>(`${this.apiServerUrl}/api/summit/all`);
+    // return this.http.get<Summit[]>(`${this.apiServerUrl}/api/summit/all`);
+    return null;
   }
 
   public addSummit(summit: Summit): Observable<Summit>{
