@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Summit} from './modules/Summit';
 import {environment} from '../environments/environment';
+import {SummitMockService} from './SummitMock.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -10,11 +11,16 @@ import {environment} from '../environments/environment';
 export class SummitService{
   private apiServerUrl = environment.apiBaseUrl;
 
-  constructor(private http: HttpClient) {  }
+  constructor(private http: HttpClient, private mocks: SummitMockService) {  }
 
-  public getSummits(): Observable<Summit[]>{
+  // public getSummits(): Observable<Summit[]>{
+  //   // return this.http.get<Summit[]>(`${this.apiServerUrl}/api/summit/all`);
+  //   return null;
+  // }
+
+  public getSummits(): Summit[]{
     // return this.http.get<Summit[]>(`${this.apiServerUrl}/api/summit/all`);
-    return null;
+    return this.mocks.data;
   }
 
   public addSummit(summit: Summit): Observable<Summit>{

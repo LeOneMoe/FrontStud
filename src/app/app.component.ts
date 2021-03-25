@@ -18,19 +18,24 @@ export class AppComponent implements OnInit{
   constructor(private sumSer: SummitService) {  }
 
   ngOnInit(): void {
-   // this.getSummits();
+   this.getSummits();
   }
 
+  // public getSummits(): void{
+  //   this.sumSer.getSummits().subscribe(
+  //     (response: Summit[]) => {
+  //       this.summits = response;
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   );
+  // }
+
   public getSummits(): void{
-    this.sumSer.getSummits().subscribe(
-      (response: Summit[]) => {
-        this.summits = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
+      this.summits = this.sumSer.getSummits();
+      console.log(this.summits);
+    }
 
   public onAddSummit(addForm: NgForm): void {
     document.getElementById('add-employee-form').click();

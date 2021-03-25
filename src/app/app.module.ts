@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import {SummitService} from './Summit.service';
+import {SummitMockService} from './SummitMock.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import {SummitService} from './Summit.service';
     BrowserModule,
     HttpClientModule, FormsModule
   ],
-  providers: [SummitService],
+  providers: [SummitService, SummitMockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
