@@ -18,7 +18,7 @@ export class AppComponent implements OnInit{
   constructor(private sumSer: SummitService) {  }
 
   ngOnInit(): void {
-   this.getSummits();
+   // this.getSummits();
   }
 
   public getSummits(): void{
