@@ -16,15 +16,15 @@ export class SummitService{
     return this.http.get<Summit[]>(`${this.apiServerUrl}/api/summit/all`);
   }
 
-  public addSummits(summit: Summit): Observable<Summit>{
+  public addSummit(summit: Summit): Observable<Summit>{
     return this.http.post<Summit>(`${this.apiServerUrl}/api/summit/add`, summit);
   }
 
-  public updateSummits(summit: Summit): Observable<Summit>{
+  public updateSummit(summit: Summit): Observable<Summit>{
     return this.http.put<Summit>(`${this.apiServerUrl}/api/summit/update`, summit);
   }
 
-  public deleteSummits(summitId: number): Observable<void>{
+  public deleteSummit(summitId: number): Observable<void>{
     return this.http.delete<void>(`${this.apiServerUrl}/api/summit/delete${summitId}`);
   }
 }
